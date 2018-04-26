@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Login from './Login';
 import './tabs.css'
 
 class Tab extends Component{
@@ -8,17 +9,17 @@ class Tab extends Component{
     this.tabList = {
       tab1:{
         label: 'Tab One',
-        content: 'This is tab number 1'
+        content: <Login />
       },
 
       tab2:{
         label: 'Tab Two',
-        content: 'This is tab number 2'
+        content: 'Här ska "Låst textfält" ligga?'
       },
 
       tab3:{
         label: 'Tab Three',
-        content: 'This is tab number 3'
+        content: 'Här ska "Baklängestext" ligga?'
       },
     };
 
