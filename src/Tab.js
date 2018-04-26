@@ -40,6 +40,8 @@ class Tab extends Component{
 
     renderLabels(){
       const label = Object.keys(this.tabList).map((value, index) => {
+        console.log("namnet på våra tabs: ", value)
+        console.log("index nummret på array: ",index)
         let status = '';
         if(value === this.state.active){
           status = 'active';
