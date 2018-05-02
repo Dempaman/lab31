@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import Login from './Login';
+import Guess from './Guess.js';
+import Chiper from './Chiper.js';
 import './tabs.css'
 
 class Tab extends Component{
   constructor(props){
     super(props);
-    this.renderLabels = this.renderLabels.bind(this);
+    //this.renderLabels = this.renderLabels.bind(this);
     this.tabList = {
       tab1:{
         label: 'Tab One',
-        content: <Login />
+        content: <Chiper />
       },
 
       tab2:{
@@ -19,7 +20,7 @@ class Tab extends Component{
 
       tab3:{
         label: 'Tab Three',
-        content: 'Här ska "Baklängestext" ligga?'
+        content: <Guess />
       },
     };
 
@@ -38,20 +39,22 @@ class Tab extends Component{
      });
    }
 
-    renderLabels(){
+    renderLabels = event =>{
       const label = Object.keys(this.tabList).map((value, index) => {
-        console.log("namnet på våra tabs: ", value)
+        
+        console.log("value på våra tabs: ", value)
         console.log("index nummret på array: ",index)
+        console.log("this.tabList : ", this.tabList);
         console.log(" ")
+        console.log("Object.keys ", Object.keys(this.tabList))
+        console.log(" ")
+
         let status = '';
         if(value === this.state.active){
           status = 'active';
         }
         return (
-          <div className = {status}
-            onClick = {this.changeTab.bind(this, this.tabList[value], value)}
-            key = {this.tabList[value].label}
-            >
+          <div className = {status} onClick = {this.changeTab.bind(this, this.tabList[value], value)} key = {this.tabList[value].label}>
             {this.tabList[value].label}
           </div>
         )
