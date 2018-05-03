@@ -40,6 +40,7 @@ function LoginButton(props){
     <button className = "loginStyle" onClick={props.onClick}>Login </button>
   );
 }
+
 function LogoutButton(props){
   return (
     <button className = "loginStyle" onClick={props.onClick}>Logout</button>

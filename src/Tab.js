@@ -19,7 +19,7 @@ class Tab extends Component{
 
       tab3:{
         label: 'Tab Three',
-        content: 'Här ska "Baklängestext" ligga?'
+        content: 'Här ska "Baklängestext" ligfga?'
       },
     };
 
@@ -43,6 +43,7 @@ class Tab extends Component{
         console.log("namnet på våra tabs: ", value)
         console.log("index nummret på array: ",index)
         console.log(" ")
+
         let status = '';
         if(value === this.state.active){
           status = 'active';
