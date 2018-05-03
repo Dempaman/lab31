@@ -4,7 +4,10 @@
   margin: 0 auto;
   text-align: center;
 }
-
+.inputShift{
+  width: 50px;
+  text-align: center;
+}
 .inputStyle{
   width: 249px;
   border: none;

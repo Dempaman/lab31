@@ -1,5 +1,6 @@
 import React from 'react';
 import './guess.css'
+import PropTypes from 'prop-types';
 
 
 class Chiper extends React.Component{
@@ -8,15 +9,29 @@ class Chiper extends React.Component{
 
     this.state={
       value: "",
-      cryptValue: ' '
+      cryptValue: ' ',
+      shift: 1
     }
     this.crypt = this.crypt.bind(this);
     this.updateString = this.updateString.bind(this);
+    this.updateShift = this.updateShift.bind(this);
+
   }
 
   updateString(event){
     this.setState({value: event.target.value });
-
+  }
+  updateShift(event){
+    const re = /^[0-9\b]+$/;
+     if (event.target.value == '' || re.test(event.target.value)) {
+       if(event.target.value <= 25){
+         this.setState({shift: event.target.value})
+       }else{
+         alert("Only number 1-25 is allowed");
+       }
+     }else{
+       alert("Only number 1-25 is allowed");
+     }
   }
 
   crypt(){
@@ -39,7 +54,7 @@ class Chiper extends React.Component{
         if(code === 90){
           c = String.fromCharCode(65)
         }else{
-          c = String.fromCharCode(code + 1)
+          c = String.fromCharCode(code + Number(this.state.shift))
         }
       }
 
@@ -50,7 +65,7 @@ class Chiper extends React.Component{
           c = String.fromCharCode(97)
           console.log("hej")
         }else{
-          c = String.fromCharCode(code + 1)
+          c = String.fromCharCode(code + Number(this.state.shift))
         }
       }
 
@@ -72,11 +87,21 @@ class Chiper extends React.Component{
         value={this.state.value}
 
        />
+       <input
+       className="inputShift"
+       value={this.state.shift}
+       onChange={this.updateShift}
+       type="text"
+       pattern="[0-9]*"
+
+        />
        <h1>{this.state.cryptValue}</h1>
        </div>
     )
   }
 }
 
-
+Chiper.propTypes = {
+  shift: PropTypes.number
+};
 export default Chiper;
