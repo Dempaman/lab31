@@ -9,7 +9,7 @@ class Guess extends Component{
       answer: '',
       random: 0,
       sum: 0,
-      totalSum: 0,
+      totalSum: '',
       guessNumber: ''
     };
 
@@ -38,7 +38,7 @@ class Guess extends Component{
 
       if(this.state.random === value){
         this.setState({answer: right});
-        this.setState({totalSum: this.state.sum});
+        this.setState({totalSum: this.state.sum + " Guesses"});
       }else if(this.state.random < this.state.value){
         this.setState({answer: hight});
 
@@ -62,8 +62,9 @@ class Guess extends Component{
     const rand = Math.floor(Math.random() * (min + max));
     this.setState({random: rand});
     this.setState({answer: deleteStr});
-    this.setState({totalSum: 0});
+    this.setState({totalSum: deleteStr});
     this.setState({sum: 1});
+    this.setState({guessNumber: deleteStr})
     console.log("this.state.random: ", rand)
 
   }
@@ -82,7 +83,7 @@ class Guess extends Component{
         <button className="getNumber" onClick={this.handleClick.bind(this)}>Click</button>
         {/*<div>The number is: {this.state.random}</div>*/}
         <div>{this.state.answer} {this.state.guessNumber} </div>
-        <div>counter: {this.state.totalSum} </div>
+        <div>{this.state.totalSum} </div>
 
         <form onSubmit={this.handleSubmit}>
           <input type="number" value={this.state.value} onChange={this.handleChange} onKeyPress={this.handleKeyPress}  className="inputStyle" placeholder="guess the magic number"></input>

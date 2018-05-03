@@ -9,7 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
   <div>
     <Login />
-    <Tab />
+    <Tab activeTabs='tab1'/>
   </div>,
   document.getElementById('root')
   );
