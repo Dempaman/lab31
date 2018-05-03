@@ -1,3 +1,5 @@
+
+
 .labels{
   list-style-type: none;
   display: flex;
@@ -15,7 +17,7 @@
   margin: 0 auto;
   text-align: center;
   color: #575757;
-  height: 60px;
+  height: 300px;
   padding: 20px;
 }
 

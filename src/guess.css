@@ -1,0 +1,60 @@
+
+.numberStyle{
+  font-size: 1.2em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inputStyle{
+  width: 249px;
+  border: none;
+  padding: 5px 5px 5px 10px;
+  background-color: #e0e0e0;
+  color: #575757;
+  margin: 20px;
+  font-family: arial;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.getNumber{
+  background-color: #5c8ab8;
+  border: none;
+  width: 200px;
+  height: 30px;
+  color: #fff;
+  font-size: 0.9em;
+  font-family: Arial;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.getNumber:hover{
+  background-color: #436c96;
+  cursor: pointer;
+}
+
+.BtnSubmit{
+  background-color: #d867d8;
+  border: none;
+  width: 150px;
+  height: 30px;
+  color: #fff;
+  font-size: 0.9em;
+  font-family: Arial;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.BtnSubmit:hover{
+  background-color: #d838d8;
+  cursor: pointer;
+}

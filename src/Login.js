@@ -6,6 +6,7 @@ class Login extends Component{
     super(props);
     this.loginClick = this.loginClick.bind(this);
     this.logoutClick = this.logoutClick.bind(this);
+
     this.state = {isLoggedIn: false}
   }
 
