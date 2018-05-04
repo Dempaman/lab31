@@ -43,7 +43,7 @@ class Tab extends Component{
     renderLabels(event) {
       const label = Object.keys(this.tabList).map((value, index) => {
 
-        console.log("this.state.tabItem ", this.state.tabItem)
+      /*  console.log("this.state.tabItem ", this.state.tabItem)
         console.log("this.state.active ", this.state.active)
         console.log("value på våra tabs: ", value)
         console.log("index nummret på array: ",index)
@@ -51,6 +51,7 @@ class Tab extends Component{
         console.log("Object.keys ", Object.keys(this.tabList))
         console.log(" this.tabList[value], ",  this.tabList[value],)
         console.log(" ")
+        */
 
         let status = '';
         if(value === this.state.active){

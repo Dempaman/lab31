@@ -23,7 +23,7 @@ class Chiper extends React.Component{
   }
   updateShift(event){
     const re = /^[0-9\b]+$/;
-     if (event.target.value == '' || re.test(event.target.value)) {
+     if (event.target.value === '' || re.test(event.target.value)) {
        if(event.target.value <= 25){
          this.setState({shift: event.target.value})
        }else{
