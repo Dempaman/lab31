@@ -50,25 +50,12 @@ class Chiper extends React.Component{
 
 			// Uppercase letters
 			if ((code >= 65) && (code <= 90)){
-        //Uppercase Z becomes A
-        if(code === 90){
-          c = String.fromCharCode(65)
-        }else{
-          c = String.fromCharCode(code + Number(this.state.shift))
-        }
+        c = String.fromCharCode(((code - 65 + Number(this.state.shift)) % 26) + 65)
       }
-
 			// Lowercase letters
 			else if ((code >= 97) && (code <= 122)){
-        //lowercase z becomes a
-        if(code === 122){
-          c = String.fromCharCode(97)
-          console.log("hej")
-        }else{
-          c = String.fromCharCode(code + Number(this.state.shift))
-        }
+          c = String.fromCharCode(((code - 97 + Number(this.state.shift)) % 26) + 97);
       }
-
 		}
      output += c;
     console.log(output);

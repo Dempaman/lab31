@@ -19,9 +19,9 @@ class Checkbox extends Component{
 
     if(this.state.check === true){
       console.log("true")
-      this.setState( {disabled: false} )
-    }else{
       this.setState( {disabled: true} )
+    }else{
+      this.setState( {disabled: false} )
       console.log("false")
     }
     this.setState({[name]: value});
